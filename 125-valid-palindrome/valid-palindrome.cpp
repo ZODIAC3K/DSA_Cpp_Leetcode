@@ -22,7 +22,6 @@ public:
         int end = s.size()-1;
 
         // trying two pointer aproach basic...
-
         while(start <= end){
             if(s[start] != s[end]){
                 status = false;
