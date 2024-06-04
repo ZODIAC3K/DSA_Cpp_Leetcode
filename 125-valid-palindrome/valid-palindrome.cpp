@@ -1,7 +1,9 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        bool status = false;
+        // if(s.size() == 1){
+        //     return true;
+        // }
         for(int i = 0; i < s.size(); i++){
             if(isdigit(s[i])){
                 continue;
@@ -15,12 +17,23 @@ public:
             }
         }
 
-        string rev = s;
+        bool status = true;
+        int start = 0;
+        int end = s.size()-1;
 
-        cout << s << endl;
+        // trying two pointer aproach basic...
 
-        reverse(rev.begin(), rev.end());
-
-        return rev == s ? true : false;
+        while(start <= end){
+            if(s[start] != s[end]){
+                status = false;
+                return status;
+            }
+            else{
+                start++;
+                end--;
+            }
+        }
+    
+        return status;
     }
 };
