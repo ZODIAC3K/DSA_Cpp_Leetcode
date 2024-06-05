@@ -19,15 +19,15 @@ public:
 
 
     }
-    void rightView(TreeNode* root, vector<int> &result, int level){
-        if(root == NULL){
+    void rightView(TreeNode* node, vector<int> &result, int level){
+        if(node == NULL){
             return;
         }
         if(level == result.size()){
-            result.push_back(root->val);
+            result.push_back(node->val);
         }
-        rightView(root->right, result, level+1);
-        rightView(root->left, result, level+1);
+        rightView(node->right, result, level+1);
+        rightView(node->left, result, level+1);
 
     }
 };
