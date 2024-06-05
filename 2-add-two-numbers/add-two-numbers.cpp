@@ -12,8 +12,8 @@ class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 
-        ListNode dummy = ListNode(0);
-        ListNode* tracker = &dummy;
+        ListNode* head = new ListNode(); // creates a node
+        ListNode* tracker = head; // creates a linker
         int total = 0, carry = 0;
 
         while (l1 || l2 || carry) {
@@ -34,7 +34,7 @@ public:
             tracker = tracker->next;
         }
 
-        return dummy.next;        
+        return head->next;        
 
     }
 };
