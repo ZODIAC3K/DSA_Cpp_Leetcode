@@ -6,8 +6,5 @@ class Solution:
                 nums[j] = nums[i]
                 j += 1
 
-        for i in range(len(nums)):
-            print(nums[i])
-            
         return j
         
