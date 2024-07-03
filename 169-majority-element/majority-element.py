@@ -14,4 +14,4 @@ class Solution:
 
         nums.sort()
         n = len(nums)
-        return nums[n//2]
+        return nums[n//2] # because when we sort we will see at n//2 index there is that element which has accured more than n/2 time where n is the len of of the given array.
