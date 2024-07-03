@@ -7,9 +7,16 @@ class Solution:
         #     saw.add(e)
         # return False
 
-        saw = {}
+        saw = set()
         for e in nums:
-            if e in saw and saw[e] >= 1:
+            if e in saw:
                 return True
-            saw[e] = saw.get(e, 0) + 1
+            saw.add(e)
         return False
+
+        # saw = {}
+        # for e in nums:
+        #     if e in saw and saw[e] >= 1:
+        #         return True
+        #     saw[e] = saw.get(e, 0) + 1
+        # return False
