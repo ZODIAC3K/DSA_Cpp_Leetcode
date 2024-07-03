@@ -1,6 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
+        # TC --> O(n*logn)
 
+        #edge case
         if len(nums) == 1:
             if nums[0] == 1:
                 return 0
@@ -11,7 +13,7 @@ class Solution:
         max_range = len(nums)
 
         nums.sort()
-
+        #edge case
         if nums[0] != 0:
             return 0
 
