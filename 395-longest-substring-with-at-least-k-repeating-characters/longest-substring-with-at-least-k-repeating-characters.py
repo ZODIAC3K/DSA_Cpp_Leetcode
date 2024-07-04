@@ -28,8 +28,14 @@ class Solution:
                     left += 1
                 
                 # Step 6: Check if all characters in the window meet the frequency requirement
-                if all(count >= k for count in char_count.values()):
-                    # Update the maximum length of valid substring found
+                all_counts_meet_requirement = True
+                for count in char_count.values():
+                    if count < k:
+                        all_counts_meet_requirement = False
+                        break
+                
+                if all_counts_meet_requirement:
+                    # Update the maximum length of a valid substring found
                     max_sub_len = max(max_sub_len, right - left + 1)
 
                 right += 1
