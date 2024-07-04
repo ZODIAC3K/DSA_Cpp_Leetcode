@@ -11,7 +11,7 @@ class Solution:
             if len(basket) <= 2:
                 maxlen = max(maxlen, r - l + 1)
             
-            while len(basket) > 2:
+            if len(basket) > 2:
 
                 basket[fruits[l]] -= 1
 
