@@ -14,9 +14,9 @@ class Solution:
             # Use a dictionary to count characters in the current window
             char_count = defaultdict(int)
             left = 0
-            
+            right = 0
             # Step 4: Expand the right end of the window over the string
-            for right in range(len(s)):
+            while right < len(s):
                 # Add the current character to the count
                 char_count[s[right]] += 1
                 
@@ -31,6 +31,7 @@ class Solution:
                 if all(count >= k for count in char_count.values()):
                     # Update the maximum length of valid substring found
                     max_sub_len = max(max_sub_len, right - left + 1)
-        
+
+                right += 1
         # Step 7: Return the maximum length of valid substring
         return max_sub_len
