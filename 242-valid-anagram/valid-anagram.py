@@ -10,4 +10,24 @@ class Solution:
         # else:
         #     return False
         
-        return Counter(s) == Counter(t)
+        # Dictionary with Counter Approach
+        # return Counter(s) == Counter(t)
+        
+        # Normal Dictionary Implementain
+        if len(s) != len(t):  # Anagrams must have the same length
+            return False
+        
+        char_count = {}
+
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+        
+        for char in t:
+            if char in char_count:
+                char_count[char] -= 1
+                if char_count[char] < 0:
+                    return False
+            else:
+                return False
+        
+        return True
