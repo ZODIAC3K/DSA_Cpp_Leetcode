@@ -24,9 +24,9 @@ class Solution:
         
         for char in t:
             if char in char_count:
-                char_count[char] -= 1
-                if char_count[char] < 0:
+                if char_count.get(char, 0) == 0: # "if char_count[char] < 0:" this would give error if char is not presnet in dict which is not something we want
                     return False
+                char_count[char] -= 1
             else:
                 return False
         
