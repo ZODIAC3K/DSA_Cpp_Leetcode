@@ -27,9 +27,24 @@ class Solution {
     //     }
     //     return false;
     // }
+        // HashMap<Integer, Integer> map = new HashMap<>();
+        // for (int i = 0; i < nums.length; i++) {
+        //     if (!map.containsKey(nums[i])) {
+        //         map.put(nums[i], i);
+        //         continue;
+        //     }
+        //     int lastValue = map.get(nums[i]);
+        //     if ((i - lastValue) <= k) {
+        //         return true;
+        //     }
+        //     map.put(nums[i], i);
+        // }
+        // return false;
+
+
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            Integer prev = map.put(nums[i], i);
+            Integer prev = map.put(nums[i], i); // return null if no value was there and puts in new value
             if (prev != null && i - prev <= k) {
                 return true;
             }
