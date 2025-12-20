@@ -3,11 +3,14 @@ public:
     void moveZeroes(vector<int>& nums) {
         int insert = 0;
 
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] != 0) {
-                swap(nums[insert], nums[i]);
-                insert++;
+        for (int x : nums) {
+            if (x != 0) {
+                nums[insert++] = x;
             }
+        }
+
+        while (insert < nums.size()) {
+            nums[insert++] = 0;
         }
     }
 };
